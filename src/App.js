@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/////////////////////////////////////////////////////////////////////
+// Our desired component Architecture
+// -> App
+//   -> Header
+//   -> Main |state: people|
+//     -> Switch
+//       -> Route |path: "/"|
+//         -> Index |Props: people, createPeople|
+//       -> Route |path="/people/:id|
+//         -> Show |Props: people, updatePeople, deletePeople|
+/////////////////////////////////////////////////////////////////////
+
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main />
     </div>
   );
 }
